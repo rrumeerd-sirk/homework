@@ -565,45 +565,50 @@ progress[value]::-webkit-progress-value {
     </div>
         <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
     <!-- Custom Chapter Select Overlay - Shows FIRST, bypasses GameMaker chapter select -->
-    <div id="chapter-select-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.98); z-index: 10000; display: flex; justify-content: center; align-items: center;">
-        <div id="chapter-select-modal" style="text-align: center; max-width: 400px; padding: 20px;">
-            <h1 style="color: #bdff00; font-family: 'Lucida Console', Monaco, monospace; margin-bottom: 10px; font-size: 32px;">DELTARUNE</h1>
-            <h2 style="color: #fff; font-family: 'Lucida Console', Monaco, monospace; font-weight: normal; margin-bottom: 30px; font-size: 18px;">SELECT CHAPTER</h2>
-            <div id="chapter-buttons" style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                <button class="chapter-btn" data-chapter="1" style="
-                    width: 300px; padding: 15px;
-                    font-family: 'Lucida Console', Monaco, monospace; font-size: 18px;
-                    background: #1a1a1a; color: #bdff00; border: 2px solid #bdff00;
-                    border-radius: 8px; cursor: pointer; transition: all 0.2s;
-                ">CHAPTER 1</button>
-                <button class="chapter-btn" data-chapter="2" style="
-                    width: 300px; padding: 15px;
-                    font-family: 'Lucida Console', Monaco, monospace; font-size: 18px;
-                    background: #1a1a1a; color: #bdff00; border: 2px solid #bdff00;
-                    border-radius: 8px; cursor: pointer; transition: all 0.2s;
-                ">CHAPTER 2</button>
-                <button class="chapter-btn" data-chapter="3" style="
-                    width: 300px; padding: 15px;
-                    font-family: 'Lucida Console', Monaco, monospace; font-size: 18px;
-                    background: #1a1a1a; color: #bdff00; border: 2px solid #bdff00;
-                    border-radius: 8px; cursor: pointer; transition: all 0.2s;
-                ">CHAPTER 3</button>
-                <button class="chapter-btn" data-chapter="4" style="
-                    width: 300px; padding: 15px;
-                    font-family: 'Lucida Console', Monaco, monospace; font-size: 18px;
-                    background: #1a1a1a; color: #bdff00; border: 2px solid #bdff00;
-                    border-radius: 8px; cursor: pointer; transition: all 0.2s;
-                ">CHAPTER 4</button>
-                <button class="chapter-btn" data-chapter="5" style="
-                    width: 300px; padding: 15px;
-                    font-family: 'Lucida Console', Monaco, monospace; font-size: 18px;
-                    background: #1a1a1a; color: #bdff00; border: 2px solid #bdff00;
-                    border-radius: 8px; cursor: pointer; transition: all 0.2s;
-                ">CHAPTER 5</button>
+                        <div id="chapter-select-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#fff;z-index:10000;display:flex;justify-content:center;align-items:center;font-family:Arial,sans-serif;">
+        <div id="chapter-select-modal" style="text-align:center;padding:20px;background:#fff;width:400px;display:flex;flex-direction:column;justify-content:center;min-height:60vh;position:relative;">
+            <h1 style="color:#000;font-size:28px;margin:-20px 0 40px;font-weight:bold;text-decoration:none;">DELTARUNE</h1>
+            
+            
+            <div id="chapter-buttons" style="display:block;">
+                <button class="chapter-btn" data-chapter="1" style="display:block;width:100%;padding:16px;margin:6px 0;background:#fff;color:#000;border:none;font-family:monospace;font-size:16px;cursor:pointer;text-align:center;outline:none;">                               CHAPTER 1</button>
+                <button class="chapter-btn" data-chapter="2" style="display:block;width:100%;padding:16px;margin:6px 0;background:#fff;color:#000;border:none;font-family:monospace;font-size:16px;cursor:pointer;text-align:center;outline:none;">CHAPTER 2</button>
+                <button class="chapter-btn" data-chapter="3" style="display:block;width:100%;padding:16px;margin:6px 0;background:#fff;color:#000;border:none;font-family:monospace;font-size:16px;cursor:pointer;text-align:center;outline:none;">CHAPTER 3 </button>
+                <button class="chapter-btn" data-chapter="4" style="display:block;width:100%;padding:16px;margin:6px 0;background:#fff;color:#000;border:none;font-family:monospace;font-size:16px;cursor:pointer;text-align:center;outline:none;">CHAPTER 4</button>
+                <button class="chapter-btn" data-chapter="5" style="display:block;width:100%;padding:16px;margin:6px 0;background:#fff;color:#000;border:none;font-family:monospace;font-size:16px;cursor:pointer;text-align:center;outline:none;">CHAPTER 5 </button>
             </div>
-            <p id="chapter-hint" style="margin-top: 20px; color: #666; font-family: 'Lucida Console', Monaco, monospace; font-size: 11px;">Select a chapter to play</p>
+            
+            <p id="chapter-hint" style="color:#666;font-size:11px;margin:0;font-family:monospace;"></p>
+            <br>
+            <small style="color:#999;font-family:monospace;"></small>
+            <br>
+            <p style="color:#000;font-size:14px;margin:0;font-family:monospace;font-weight:bold;opacity:0.2;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);">sorry toby</p>
         </div>
     </div>
+    <style>
+        .chapter-btn {
+            background: #fff !important;
+            color: #000 !important;
+            border: none !important;
+            outline: none !important;
+        }
+        .chapter-btn:hover, .chapter-btn:focus, .chapter-btn:active, .chapter-btn:focus-visible {
+            background: #fff !important;
+            color: #000 !important;
+            border: none !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        .chapter-btn::-moz-focus-inner {
+            border: 0 !important;
+        }
+    </style>
+
+
+
+
+
+
 
     <script>
         // Chapter select logic - runs immediately, before GameMaker loads
@@ -615,10 +620,21 @@ progress[value]::-webkit-progress-value {
             const urlParams = new URLSearchParams(window.location.search);
             const existingChapter = urlParams.get('c');
             
-            if (existingChapter && existingChapter !== '0') {
-                // Chapter already in URL - hide overlay, let game load
+            // Valid chapters are 1-5
+            const validChapters = ['1', '2', '3', '4', '5'];
+            const isValidChapter = existingChapter && validChapters.includes(existingChapter);
+            
+            if (isValidChapter) {
+                // Valid chapter in URL - hide overlay, let game load
                 overlay.style.display = 'none';
                 return;
+            }
+            
+            // Invalid chapter (0, 6+, or non-numeric) - show overlay to let user pick
+            // Also update URL to remove invalid chapter param
+            if (existingChapter && existingChapter !== '0') {
+                const newUrl = window.location.pathname + window.location.hash;
+                window.history.replaceState({}, '', newUrl);
             }
             
             // No chapter selected - show overlay and wait for user choice
