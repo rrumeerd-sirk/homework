@@ -977,6 +977,15 @@ progress[value]::-webkit-progress-value {
                     this.totalDependencies = Math.max(this.totalDependencies, left);
                     Module.setStatus(left ? "Preparing... (" + (this.totalDependencies - left) + "/" + this.totalDependencies + ")" : "All downloads complete.");
                 },
+                locateFile: function(path, prefix) {
+                    // Map virtual filesystem paths to actual GitHub Pages URLs
+                    // The game is hosted at https://rrumeerd-sirk.github.io/homework/
+                    // so assets need the /homework/ prefix
+                    if (path.startsWith("mus/") || path.startsWith("chapter") || path.startsWith("vid/")) {
+                        return "/homework/" + path;
+                    }
+                    return path;
+                },
             };
             Module.setStatus("Downloading...");
             window.onerror = function(event) {
